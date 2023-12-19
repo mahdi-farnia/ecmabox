@@ -1,18 +1,15 @@
-import * as stylex from '@stylexjs/stylex';
+import StarterView from './components/StarterView';
+import TargetsPanel from './components/TargetsPanel';
+import Console from './components/Console';
 
-const s = stylex.create({
-  test: {
-    fontSize: 20,
-    color: 'red'
-  }
-});
-
-function App() {
-  return (
-    <>
-      <p {...stylex.props(s.test)}>Hello World</p>
-    </>
-  );
-}
+const App: React.FC = () => (
+  <div>
+    <div>
+      <StarterView />
+      <TargetsPanel />
+    </div>
+    <Console />
+  </div>
+);
 
 export default App;
