@@ -1,13 +1,8 @@
 import * as stylex from '@stylexjs/stylex';
+import type { StyleXAsProp } from 'box/lib/utility';
 
-const s = stylex.create({
-  container: {
-    flex: 1
-  }
-});
-
-const StarterView: React.FC = () => {
-  return <div {...stylex.props(s.container)}>StarterView</div>;
+const StarterView: React.FC<StyleXAsProp> = ({ style }) => {
+  return <div {...stylex.props(style)}>StarterView</div>;
 };
 
 export default StarterView;

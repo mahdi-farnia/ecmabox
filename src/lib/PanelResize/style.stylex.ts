@@ -8,7 +8,34 @@ const row = stylex.create({
     left: 0,
     zIndex: 1,
     cursor: 'row-resize',
-    padding: '2px 0',
+    padding: '2px 0'
+  },
+  resizerUI: {
+    width: '100%',
+    height: 1,
+    backgroundColor: '#000'
+  }
+});
+
+const column = stylex.create({
+  resizer: {
+    height: '100%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    zIndex: 1,
+    cursor: 'col-resize',
+    padding: '0 2px'
+  },
+  resizerUI: {
+    width: 1,
+    height: '100%',
+    backgroundColor: '#000'
+  }
+});
+
+export const shared = stylex.create({
+  pseudo: {
     '::after': {
       content: '',
       width: '100%',
@@ -24,17 +51,7 @@ const row = stylex.create({
     ':hover::after': {
       backgroundColor: '#44acff'
     }
-  },
-  resizerUI: {
-    width: '100%',
-    height: 1,
-    backgroundColor: '#000'
   }
-});
-
-const column = stylex.create({
-  resizer: {},
-  resizerUI: {}
 });
 
 const orientations = { row, column };

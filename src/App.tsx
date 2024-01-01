@@ -4,27 +4,24 @@ import Console from './components/Console';
 import * as stylex from '@stylexjs/stylex';
 
 const s = stylex.create({
-  base: {
-    display: 'flex'
+  grid: {
+    width: '100%',
+    height: '100%',
+    display: 'grid',
+    gridTemplate: '1fr 300px / 1fr 300px'
   },
-  vstack: {
-    flexDirection: 'column',
-    height: '100%'
-  },
-  hstack: {
-    alignItems: 'stretch',
-    flexDirection: 'row',
-    flex: 1
+  starter: {},
+  targetsPanel: {},
+  console: {
+    gridArea: '2 / 1 / span 1 / span 2'
   }
 });
 
 const App: React.FC = () => (
-  <div {...stylex.props(s.base, s.vstack)}>
-    <div {...stylex.props(s.base, s.hstack)}>
-      <StarterView />
-      <TargetsPanel />
-    </div>
-    <Console />
+  <div {...stylex.props(s.grid)}>
+    <StarterView style={s.starter} />
+    <TargetsPanel style={s.targetsPanel} />
+    <Console style={s.console} />
   </div>
 );
 
