@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import stylexPlugin from '@stylexjs/rollup-plugin';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 declare const __dirname: string;
 declare const process: { env: Record<string, string | undefined> };
@@ -8,6 +9,7 @@ declare const process: { env: Record<string, string | undefined> };
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    tsconfigPaths(),
     react(),
     stylexPlugin({
       // Required. File path for the generated CSS file.
